@@ -22,7 +22,7 @@ def main():
     retriever = init_vector_store()
 
     # Инициализация цепочки QA
-    model_name = os.getenv("OLLAMA_MODEL", "phi3:mini-128k-instruct-q4_0")
+    model_name = os.getenv("OLLAMA_MODEL", "phi3:3.8b-mini-128k-instruct-q4_K_M")
     qa_chain = init_qa_chain(retriever, model_name)
 
     logger.info("✅ Система готова к работе")
