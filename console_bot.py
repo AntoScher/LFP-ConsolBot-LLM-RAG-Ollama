@@ -1,5 +1,5 @@
 from core.database import init_db, log_query
-from core.embeddings import init_vector_store
+from core.local_embeddings import init_local_vector_store
 from core.chains import init_qa_chain
 import os
 import logging
@@ -18,8 +18,8 @@ def main():
     # Инициализация БД
     init_db()
 
-    # Инициализация векторного хранилища
-    retriever = init_vector_store()
+    # Инициализация локального векторного хранилища
+    retriever = init_local_vector_store()
 
     # Инициализация цепочки QA
     model_name = os.getenv("OLLAMA_MODEL", "phi3:3.8b-mini-128k-instruct-q4_K_M")
